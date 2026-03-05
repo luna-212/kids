@@ -6,7 +6,7 @@ async function main() {
     const STAKING_ADDRESS = "0x008313Dfba269808C63745708D97B5b0b38Aed76";
 
       // jumlah yang mau di stake (contoh: 10 Coon)
-        const AMOUNT = "1";
+        const AMOUNT = "0.2";
 
           const [signer] = await ethers.getSigners();
 

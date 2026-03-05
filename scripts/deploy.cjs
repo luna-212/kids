@@ -5,9 +5,9 @@ async function main() {
   const [deployer] = await hre.ethers.getSigners();
     console.log("Deploying with:", deployer.address);
 
-      const initialSupply = hre.ethers.utils.parseUnits("10000000", 18); // 1 juta token
+      const initialSupply = hre.ethers.utils.parseUnits("2500000", 18); // 1 juta token
 
-        const Token = await hre.ethers.getContractFactory("MyToken");
+        const Token = await hre.ethers.getContractFactory("TheoLend");
           const token = await Token.deploy(initialSupply);
 
             await token.deployed();

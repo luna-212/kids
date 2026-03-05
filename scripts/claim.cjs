@@ -18,7 +18,7 @@ async function main() {
                             console.log(`\nProcessing staking ${i + 1}: ${stakingAddress}`);
 
                                 const staking = await hre.ethers.getContractAt(
-                                      "StakingERC20", // pastikan sesuai nama contract
+                                      "DevStake", // pastikan sesuai nama contract
                                             stakingAddress
                                                 );
 

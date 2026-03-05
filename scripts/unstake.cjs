@@ -4,29 +4,37 @@ async function main() {
   const [user] = await hre.ethers.getSigners();
     console.log("Unstaking from:", user.address);
 
-      // ====== GANTI INI ======
-        const STAKING_ADDRESS = "0xe35DC8f82676D8Cf911Ea5c1962B990fA671E732";
-          const AMOUNT = "850000"; // jumlah Token A yang mau di-unstake (tanpa desimal)
-            // ========================
+      // daftar contract staking
+        const STAKING_CONTRACTS = [
+            "0xbA3Df320996eed030a418413e239be44f28C0e3F", "0xe35DC8f82676D8Cf911Ea5c1962B990fA671E732"
+                  ];
 
-              const staking = await hre.ethers.getContractAt(
-                  "StakingERC20",
-                      STAKING_ADDRESS
-                        );
+                    const AMOUNT = "1000"; // jumlah token
 
-                          // ethers v5 pakai utils
-                            const amountInWei = hre.ethers.utils.parseUnits(AMOUNT, 18);
+                      for (let i = 0; i < STAKING_CONTRACTS.length; i++) {
 
-                              const tx = await staking.unstake(amountInWei);
+                          const STAKING_ADDRESS = STAKING_CONTRACTS[i];
 
-                                console.log("Unstake tx hash:", tx.hash);
+                              console.log("\nProcessing staking:", STAKING_ADDRESS);
 
-                                  await tx.wait();
+                                  const staking = await hre.ethers.getContractAt(
+                                        "DevStake",
+                                              STAKING_ADDRESS
+                                                  );
 
-                                    console.log("Unstake berhasil ✅");
-                                    }
+                                                      const amountInWei = hre.ethers.utils.parseUnits(AMOUNT, 18);
 
-                                    main().catch((error) => {
-                                      console.error(error);
-                                        process.exitCode = 1;
-                                        });
+                                                          const tx = await staking.unstake(amountInWei);
+
+                                                              console.log("Unstake tx hash:", tx.hash);
+
+                                                                  await tx.wait();
+
+                                                                      console.log("✅ Unstake berhasil dari", STAKING_ADDRESS);
+                                                                        }
+                                                                        }
+
+                                                                        main().catch((error) => {
+                                                                          console.error(error);
+                                                                            process.exitCode = 1;
+                                                                            });

@@ -5,8 +5,8 @@ async function main() {
     console.log("Approving from:", user.address);
 
       // ====== GANTI INI ======
-        const TOKEN_A = "0x19aDf1d00027F97BC9AAdA0D659986ad29761e8d";        // alamat token yang di-stake
-          const STAKING_ADDRESS = "0xbA3Df320996eed030a418413e239be44f28C0e3F"; // alamat contract staking
+        const TOKEN_A = "0xc98FEa08624C89222B8bABda1a2CaAb635b05537";        // alamat token yang di-stake
+          const STAKING_ADDRESS = "0x1eAD6388b852351d0f99fc725E37093E61705284"; // alamat contract staking
             const AMOUNT = "100000000";                      // jumlah token (tanpa desimal)
               // ========================
 

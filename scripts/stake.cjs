@@ -10,12 +10,12 @@ async function main() {
             {
                   token: "0x6Ee017E584Ce6ed0F94188134293FD097Eee1FAc",
                         staking: "0xe35DC8f82676D8Cf911Ea5c1962B990fA671E732",
-                              amount: "25000"
+                              amount: "1000"
                                   },
                                       {
                                             token: "0x19aDf1d00027F97BC9AAdA0D659986ad29761e8d",
                                                   staking: "0xbA3Df320996eed030a418413e239be44f28C0e3F",
-                                                        amount: "25000"
+                                                        amount: "1000"
                                                             }
                                                               ];
 
